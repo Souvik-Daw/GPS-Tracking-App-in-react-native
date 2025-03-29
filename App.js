@@ -13,32 +13,32 @@ const App = () => {
   const navigation = useNavigation();
   const [userId, setuserId] = useState(""); // Store button value
 
-  // const handlePress = (value) => {
-  //   setuserId(value); // Store button title
-  //   navigation.navigate("UserLocation", { userId: value }); // Pass as parameter
-  // };
-
-  // return (
-  //   <View style={styles.container}>
-  //     <Button title="Test Driver 1 " onPress={() => handlePress("Test_user_1")} />
-  //     <View style={{ marginVertical: 10 }} />
-  //     <Button title="Test Driver 2 " onPress={() => handlePress("Test_user_2")} />
-  //   </View>
-  // );
-
-
-   const handlePress = (value) => {
+  const handlePress = (value) => {
     setuserId(value); // Store button title
-    navigation.navigate("AdminPanel", { userId: value }); // Pass as parameter
+    navigation.navigate("UserLocation", { userId: value }); // Pass as parameter
   };
 
   return (
     <View style={styles.container}>
-      <Button title="Track Test Driver 1 " onPress={() => handlePress("Test_user_1")} />
+      <Button title="Test Driver 1 " onPress={() => handlePress("Test_user_1")} />
       <View style={{ marginVertical: 10 }} />
-      <Button title="Track Test Driver 2 " onPress={() => handlePress("Test_user_2")} />
+      <Button title="Test Driver 2 " onPress={() => handlePress("Test_user_2")} />
     </View>
   );
+
+
+  //  const handlePress = (value) => {
+  //   setuserId(value); // Store button title
+  //   navigation.navigate("AdminPanel", { userId: value }); // Pass as parameter
+  // };
+
+  // return (
+  //   <View style={styles.container}>
+  //     <Button title="Track Test Driver 1 " onPress={() => handlePress("Test_user_1")} />
+  //     <View style={{ marginVertical: 10 }} />
+  //     <Button title="Track Test Driver 2 " onPress={() => handlePress("Test_user_2")} />
+  //   </View>
+  // );
   
 };
 
@@ -47,8 +47,8 @@ const AppStack = () => {
     <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen name="App" component={App} />
-      {/* <Stack.Screen name="UserLocation" component={UserLocation} /> */}
-      <Stack.Screen name="AdminPanel" component={AdminPanel} />
+      <Stack.Screen name="UserLocation" component={UserLocation} /> 
+      {/* <Stack.Screen name="AdminPanel" component={AdminPanel} /> */}
     </Stack.Navigator>
     </NavigationContainer>
   );
